@@ -15,9 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
   void Start()
   {
-    animator.SetInteger("AnimState", 1);
   }
-
 
   void Update()
   {
@@ -35,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     }
     else if (horizontal == 0)
     {
-      animator.SetInteger("AnimState", 1);
+      animator.SetInteger("AnimState", 0);
     }
 
     Move(horizontal);
@@ -59,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
     rb.AddForce(Vector2.up * jumpHeight);
     animator.SetBool("Grounded", false);
     animator.SetFloat("AirSpeed", -1f);
-    animator.SetTrigger("Jump");
   }
 
   public void Grounded()

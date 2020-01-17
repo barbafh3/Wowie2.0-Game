@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TerrainCollision : MonoBehaviour
 {
@@ -14,6 +12,7 @@ public class TerrainCollision : MonoBehaviour
   void OnCollisionEnter2D(Collision2D other)
   {
     if (other.gameObject.CompareTag("Player"))
-      other.gameObject.GetComponent<PlayerMovement>().Grounded();
+      Debug.Log("grounded");
+    other.gameObject.GetComponent<PlayerMovement>().Grounded();
   }
 }
