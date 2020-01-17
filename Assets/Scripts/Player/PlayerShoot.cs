@@ -7,13 +7,21 @@ public class PlayerShoot : MonoBehaviour
 
   public GameObject shotPrefab;
 
+  public Animator animator;
+
   public Transform shotOrigin;
 
   void Update()
   {
     if (Input.GetKeyDown(KeyCode.F))
     {
-      var shot = Instantiate(shotPrefab, shotOrigin.position, transform.rotation);
+      animator.SetTrigger("Attack");
+      Invoke("Shoot", 0.5f);
     }
+  }
+
+  void Shoot()
+  {
+    Instantiate(shotPrefab, shotOrigin.position, transform.rotation);
   }
 }

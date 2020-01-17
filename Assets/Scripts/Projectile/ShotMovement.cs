@@ -25,7 +25,7 @@ public class ShotMovement : MonoBehaviour
 
   void Move()
   {
-    transform.Translate(Vector2.right * speed * Time.deltaTime);
+    transform.Translate(-Vector2.right * speed * Time.deltaTime);
     var x = transform.position.x;
     var y = player.position.y;
     transform.position = new Vector2(x, y);

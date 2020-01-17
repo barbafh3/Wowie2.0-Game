@@ -13,18 +13,29 @@ public class PlayerMovement : MonoBehaviour
 
   public bool isJumping = false;
 
+  void Start()
+  {
+    animator.SetInteger("AnimState", 1);
+  }
+
 
   void Update()
   {
     var horizontal = Input.GetAxisRaw("Horizontal");
 
-    if (horizontal < 0)
+    if (horizontal > 0)
     {
       transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+      animator.SetInteger("AnimState", 2);
     }
-    else if (horizontal > 0)
+    else if (horizontal < 0)
     {
       transform.localRotation = Quaternion.identity;
+      animator.SetInteger("AnimState", 2);
+    }
+    else if (horizontal == 0)
+    {
+      animator.SetInteger("AnimState", 1);
     }
 
     Move(horizontal);
@@ -46,5 +57,15 @@ public class PlayerMovement : MonoBehaviour
     rb.velocity = Vector2.zero;
     isJumping = true;
     rb.AddForce(Vector2.up * jumpHeight);
+    animator.SetBool("Grounded", false);
+    animator.SetFloat("AirSpeed", -1f);
+    animator.SetTrigger("Jump");
+  }
+
+  public void Grounded()
+  {
+    isJumping = false;
+    animator.SetBool("Grounded", true);
+    animator.SetFloat("AirSpeed", 0f);
   }
 }
