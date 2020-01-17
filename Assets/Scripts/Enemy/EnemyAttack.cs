@@ -18,7 +18,8 @@ public class EnemyAttack : MonoBehaviour {
     }
 
     private void Update () {
-        var distance = Vector3.Distance (transform.position, player.position);
+        var newTarget = new Vector3(player.position.x, transform.position.y, transform.position.z);
+        var distance = Vector3.Distance (transform.position, newTarget);
 
         if (distance <= distanceForAttack) {
             // ATACAR PLAYER   
@@ -32,12 +33,10 @@ public class EnemyAttack : MonoBehaviour {
             }
 
 
-            transform.position = Vector2.MoveTowards (transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards (transform.position, newTarget, speed * Time.deltaTime);
 
         } else if (distance > distanceForFollow) {
             transform.position = Vector2.MoveTowards(transform.position, startPos, speed * Time.deltaTime);
         }
-
     }
-
 }
