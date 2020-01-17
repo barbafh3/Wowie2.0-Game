@@ -11,16 +11,25 @@ public class PlayerMovement : MonoBehaviour
 
   public float jumpHeight;
 
-  bool _isJumping = false;
+  public bool isJumping = false;
 
 
   void Update()
   {
     var horizontal = Input.GetAxisRaw("Horizontal");
 
+    if (horizontal < 0)
+    {
+      transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+    }
+    else if (horizontal > 0)
+    {
+      transform.localRotation = Quaternion.identity;
+    }
+
     Move(horizontal);
 
-    if (Input.GetKeyDown(KeyCode.Space) && !_isJumping)
+    if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
     {
       Jump();
     }
@@ -35,8 +44,7 @@ public class PlayerMovement : MonoBehaviour
   public void Jump()
   {
     rb.velocity = Vector2.zero;
-    _isJumping = true;
-    animator.SetBool("isFalling", false);
+    isJumping = true;
     rb.AddForce(Vector2.up * jumpHeight);
   }
 }
