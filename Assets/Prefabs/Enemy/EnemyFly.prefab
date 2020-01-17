@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 6399425183289024003}
   - component: {fileID: 6399425183289024000}
   m_Layer: 0
-  m_Name: Enemy Fly
+  m_Name: EnemyFly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 6399425183332859054}
   - component: {fileID: 6399425183332859040}
   - component: {fileID: 6399425183332859041}
+  - component: {fileID: 1092154625}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -177,6 +178,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   health: 4
+--- !u!95 &1092154625
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6399425183332859055}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9aec12a4c7f32f94bbae3486b6d482df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6399425183505706665
 GameObject:
   m_ObjectHideFlags: 0
