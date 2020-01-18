@@ -460,10 +460,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6119998807446807633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe3a1c677b2772749849ed2007ee1e1b, type: 3}
+  m_Script: {fileID: 11500000, guid: a0c25f66e898a5240bbcf089902ff017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plataform: {fileID: 6119998805903747505}
+  object: {fileID: 6119998805903747505}
   A: {fileID: 6119998807374254148}
   B: {fileID: 6119998807332496058}
   speed: 1
+  lookRight: 0

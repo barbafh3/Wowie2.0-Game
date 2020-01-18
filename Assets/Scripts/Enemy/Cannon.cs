@@ -16,9 +16,6 @@ public class Cannon : MonoBehaviour {
         distance = Vector2.Distance (transform.position, target.position);
 
         barrel.rotation = Quaternion.Euler (0, 0, distance * 10);
-
-        if(Input.GetMouseButtonDown(0))
-            Shoot();
     }
 
     public void Shoot () {
