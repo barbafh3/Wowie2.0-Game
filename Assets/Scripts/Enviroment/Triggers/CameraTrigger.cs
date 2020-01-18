@@ -11,6 +11,10 @@ public class CameraTrigger : MonoBehaviour
     {
       playerCamera.gameObject.transform.position = cameraPosition.value;
     }
+    else if (other.CompareTag("Shot"))
+    {
+      Destroy(other.gameObject);
+    }
   }
 
 }
