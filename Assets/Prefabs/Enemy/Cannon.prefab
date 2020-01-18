@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7528068709843877615}
-  m_LocalRotation: {x: -0, y: -0, z: -0.08915172, w: 0.99601805}
+  m_LocalRotation: {x: 0, y: 0, z: -0.08915513, w: 0.99601775}
   m_LocalPosition: {x: 2.61, y: -3.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 7528068710792077612}
-  distance: 10
   shoot: {fileID: 6629522068822255267, guid: 4e821d930e9efb648b862a48fac12ee3, type: 3}
 --- !u!1 &7528068709914525488
 GameObject:
@@ -169,7 +168,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -3324884585196857870, guid: 62d04c44c633bda40b4e82430a6076a8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -206,13 +205,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7528068710792077615}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.5430279, w: 0.8397147}
   m_LocalPosition: {x: -0.18, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7528068709843877613}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 65.78}
 --- !u!212 &7528068710792077613
 SpriteRenderer:
   m_ObjectHideFlags: 0
