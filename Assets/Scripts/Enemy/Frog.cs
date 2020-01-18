@@ -35,4 +35,10 @@ public class Frog : EnemyBase {
     protected override void OnDeath () {
         Destroy (gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("Player")) {
+            other.GetComponent<PlayerHealth>().RemoveHealth(1);
+        }
+    }
 }

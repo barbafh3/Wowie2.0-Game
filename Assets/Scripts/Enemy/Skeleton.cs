@@ -20,7 +20,6 @@ public class Skeleton : EnemyBase {
         startPos = transform.position;
 
         Flip();
-
     }
 
     private void Update () {
