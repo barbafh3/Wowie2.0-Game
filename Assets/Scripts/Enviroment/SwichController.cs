@@ -12,8 +12,8 @@ public class SwichController : MonoBehaviour {
     private Vector3 target;
     private SpriteRenderer spriteRenderer;
 
-    private void Start() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+    private void Start () {
+        spriteRenderer = GetComponent<SpriteRenderer> ();
 
         target = A.position;
     }
@@ -26,14 +26,21 @@ public class SwichController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D (Collider2D other) {
-        onOff = !onOff;
 
-        if (onOff) {
-            spriteRenderer.sprite = sprites[1];
-            target = B.position;
-        } else {
-            spriteRenderer.sprite = sprites[0];
-            target = A.position;
+        var shoot = other.GetComponent<ShotMovement> ();
+
+        if (shoot != null) {
+            onOff = !onOff;
+
+            if (onOff) {
+                spriteRenderer.sprite = sprites[1];
+                target = B.position;
+            } else {
+                spriteRenderer.sprite = sprites[0];
+                target = A.position;
+            }
+
+            Destroy(other.gameObject);
         }
     }
 
