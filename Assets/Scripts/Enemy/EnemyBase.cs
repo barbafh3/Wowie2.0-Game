@@ -26,7 +26,6 @@ public abstract class EnemyBase : MonoBehaviour {
             if (health <= 0 && !death) {
                 death = true;
                 OnDeath();
-                // ANIMAÇÃO DE MORTE
             }
         }
     }

@@ -30,13 +30,12 @@ public class EnemyAttack : EnemyBase {
 
             transform.position = Vector2.MoveTowards (transform.position, newTarget, speed * Time.deltaTime);
 
-        } else if (distance > distanceForFollow) {
+        } else if (distance > distanceForFollow) 
             transform.position = Vector2.MoveTowards (transform.position, startPos, speed * Time.deltaTime);
-        }
+        
     }
 
 
-    protected override void OnDeath () {
-        Destroy(gameObject);
-    }
+    protected override void OnDeath () => Destroy(gameObject);
+    
 }
