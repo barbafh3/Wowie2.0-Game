@@ -71,8 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
-  cameraPosition: {fileID: 0}
-  cameraCollider: {fileID: 0}
+  cameraPosition: {fileID: 11400000, guid: 1bb3028472c81fdb6ad9e8136462c682, type: 2}
 --- !u!1 &8124343518591115355
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,5 +175,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
-  cameraPosition: {fileID: 0}
-  cameraCollider: {fileID: 0}
+  cameraPosition: {fileID: 11400000, guid: 630f10c0311e8ab3d8f7752e1df02c59, type: 2}
