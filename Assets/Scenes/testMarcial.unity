@@ -2507,6 +2507,11 @@ PrefabInstance:
       propertyPath: lookRight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3347609930652644093, guid: 09c7133656a9c9c42b67c12829f52598,
+        type: 3}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 8300000, guid: 337e2e1a8178ce047a11fb4741a09968, type: 3}
     - target: {fileID: 3347609930652644095, guid: 09c7133656a9c9c42b67c12829f52598,
         type: 3}
       propertyPath: m_LocalPosition.x
