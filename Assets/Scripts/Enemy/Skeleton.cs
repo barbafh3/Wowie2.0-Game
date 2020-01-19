@@ -17,6 +17,7 @@ public class Skeleton : EnemyBase {
         base.Start ();
 
         anim = GetComponent<Animator> ();
+        source = GetComponent<AudioSource>();
         startPos = transform.position;
 
         Flip();
@@ -65,5 +66,14 @@ public class Skeleton : EnemyBase {
 
                 transform.rotation = (lookRight) ? Quaternion.Euler (0, 180, 0) : Quaternion.Euler (0, 0, 0);
             }
+    }
+
+
+    public void Sound(string audio) {
+        switch(audio) {
+            case "ATTACK":
+                source.PlayOneShot(attack);
+            break;
+        }
     }
 }
