@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class Wizard : EnemyBase {
 
-    public float countdown = Mathf.Infinity;
 
     private Cannon cannon => FindObjectOfType<Cannon> ();
     private Animator anim => GetComponent<Animator> ();
 
     private float timer;
+    private float countdown = Mathf.Infinity;
 
     private void Update () {
         timer += Time.deltaTime;
