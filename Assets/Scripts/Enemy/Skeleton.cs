@@ -58,6 +58,7 @@ public class Skeleton : EnemyBase {
         anim.SetTrigger ("death");
         Sound("DEATH");
         GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().isKinematic = true;
         Destroy (gameObject, 1.1f);
     }
 
