@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Wizard : EnemyBase {
 
-    public float countdown = 3;
+    public float countdown = Mathf.Infinity;
 
     private Cannon cannon => FindObjectOfType<Cannon> ();
     private Animator anim => GetComponent<Animator> ();
@@ -34,5 +34,9 @@ public class Wizard : EnemyBase {
 
     protected override void OnHit () {
         source.PlayOneShot(damage, 0.5f);
+    }
+
+    private void OnBecameVisible() {
+        countdown = 3;
     }
 }

@@ -217,7 +217,7 @@ PrefabInstance:
     - target: {fileID: 4370296153111123776, guid: b75f64d74371b3d42b1e1105ca818a56,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4370296153111123783, guid: b75f64d74371b3d42b1e1105ca818a56,
         type: 3}
@@ -432,7 +432,7 @@ PrefabInstance:
     - target: {fileID: 7246308408104182690, guid: 6620997eb85466342b4e8ce3b098b985,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6620997eb85466342b4e8ce3b098b985, type: 3}
@@ -7979,6 +7979,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3347609930652644089, guid: 09c7133656a9c9c42b67c12829f52598,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3347609930652644093, guid: 09c7133656a9c9c42b67c12829f52598,
         type: 3}
       propertyPath: distanceForAttack
@@ -8012,7 +8017,7 @@ PrefabInstance:
     - target: {fileID: 3347609930652644095, guid: 09c7133656a9c9c42b67c12829f52598,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.771
+      value: -3.29
       objectReference: {fileID: 0}
     - target: {fileID: 3347609930652644095, guid: 09c7133656a9c9c42b67c12829f52598,
         type: 3}
@@ -8058,6 +8063,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367070739037920331, guid: 09c7133656a9c9c42b67c12829f52598,
+        type: 3}
+      propertyPath: m_Mass
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09c7133656a9c9c42b67c12829f52598, type: 3}
@@ -8137,7 +8147,7 @@ PrefabInstance:
     - target: {fileID: 7528068709843877615, guid: 48478ca778f64c144bff58dc2389101b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48478ca778f64c144bff58dc2389101b, type: 3}
@@ -8800,7 +8810,7 @@ PrefabInstance:
     - target: {fileID: 4370296153111123776, guid: b75f64d74371b3d42b1e1105ca818a56,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4370296153111123791, guid: b75f64d74371b3d42b1e1105ca818a56,
         type: 3}
