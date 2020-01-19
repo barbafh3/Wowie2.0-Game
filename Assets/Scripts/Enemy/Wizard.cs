@@ -13,7 +13,7 @@ public class Wizard : EnemyBase {
     private void Update () {
         timer += Time.deltaTime;
 
-        if (timer >= countdown) {
+        if (timer >= countdown && !death) {
             timer = 0;
             StartCoroutine ("Attack");
         }
