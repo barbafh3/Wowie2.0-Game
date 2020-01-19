@@ -40,7 +40,7 @@ public class Archer : EnemyBase {
     }
 
     protected override void OnHit () {
-        source.PlayOneShot (damage, 3);
+        source.PlayOneShot (damage, 5);
     }
 
     private void OnBecameVisible () {

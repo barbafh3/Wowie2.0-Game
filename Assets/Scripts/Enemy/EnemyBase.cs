@@ -23,19 +23,19 @@ public abstract class EnemyBase : MonoBehaviour {
 
     public void ApplyDamage (float damage) {
         health -= damage;
+        StartCoroutine (TakeDamage ());
 
         if (health <= 0 && !death) {
             death = true;
             OnDeath ();
 
-        } else 
-            StartCoroutine (TakeDamage ());
-        
+        } else
+            OnHit ();
+
     }
 
     protected IEnumerator TakeDamage () {
         spriteRenderer.color = Color.red;
-        OnHit ();
         yield return new WaitForSeconds (0.1f);
         spriteRenderer.color = Color.white;
     }
