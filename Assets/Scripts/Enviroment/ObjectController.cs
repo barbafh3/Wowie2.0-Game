@@ -13,7 +13,8 @@ public class ObjectController : MonoBehaviour {
 
     private void Start () {
         spriteRenderer = @object.gameObject.GetComponent<SpriteRenderer> ();
-        target = B.position;
+        target = A.position;
+        @object.position = A.position;
 
         if (isEnemy)
             spriteRenderer.flipX = lookRight;
