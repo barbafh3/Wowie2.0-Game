@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1345858801906923108
 Transform:
   m_ObjectHideFlags: 0
@@ -53,7 +53,6 @@ MonoBehaviour:
   attack: {fileID: 8300000, guid: 01e04dc944a8ce945a2a3edb0bcb4c6b, type: 3}
   damage: {fileID: 8300000, guid: 9104ad3d1be8e274c8e32557011ebb4b, type: 3}
   dead: {fileID: 8300000, guid: 3bcf6fd6a5ad4bd47b5c7c3d4df101d2, type: 3}
-  countdown: 3
   arrow: {fileID: 4641768926337160735, guid: fc50f85fd33b4274597cd3fc3c2c4926, type: 3}
   pointArrow: {fileID: 1345858801990577396}
 --- !u!212 &1345858801906923115

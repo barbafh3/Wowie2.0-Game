@@ -70,4 +70,8 @@ public class Frog : EnemyBase {
     protected override void OnHit () {
         Sound("DEATH");
     }
+
+    private void OnBecameVisible() {
+        anim.Play("idle");
+    }
 }
