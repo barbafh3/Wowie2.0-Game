@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1124531081268784476}
   - component: {fileID: 3736576903512629323}
   - component: {fileID: 231379325300554190}
-  - component: {fileID: 107237334892598761}
+  - component: {fileID: 2033457210886909454}
   m_Layer: 0
   m_Name: Shot
   m_TagString: Shot
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 3736576903512629323}
   speed: 6
---- !u!58 &107237334892598761
+--- !u!58 &2033457210886909454
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,9 +129,9 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12, y: -0.02}
+  m_Offset: {x: -0.16, y: -0.02}
   serializedVersion: 2
-  m_Radius: 0.22
+  m_Radius: 0.21
