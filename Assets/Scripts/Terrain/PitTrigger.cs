@@ -11,6 +11,7 @@ public class PitTrigger : MonoBehaviour
     if (other.CompareTag("Player"))
     {
       other.GetComponent<PlayerMovement>().rb.velocity = Vector2.zero;
+      other.GetComponent<PlayerHealth>().RemoveHealth(1);
       other.transform.position = respawnTransform.position;
     }
   }
