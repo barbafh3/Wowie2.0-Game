@@ -14,5 +14,9 @@ public class PitTrigger : MonoBehaviour
       other.GetComponent<PlayerHealth>().RemoveHealth(1);
       other.transform.position = respawnTransform.position;
     }
+    else if (other.CompareTag("Enemy"))
+    {
+      Destroy(other.gameObject);
+    }
   }
 }

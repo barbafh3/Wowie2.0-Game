@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,13 +12,14 @@ public class PlayerHealth : MonoBehaviour
   void Start()
   {
     currentHealth.Value = startingHealth;
+    healthChangeEvent.Raise();
   }
 
   void Update()
   {
     if (currentHealth.Value <= 0)
     {
-      Debug.Log("Morreu");
+      SceneManager.LoadScene("GameOver");
     }
   }
 
