@@ -87,4 +87,9 @@ public class Frog : EnemyBase {
         anim.Play("idle");
         InvokeRepeating("Randomize", 0, 2);
     }
+
+    private void OnBecameInvisible() {
+        anim.Play("NONE");
+        CancelInvoke("Randomize");
+    }
 }
