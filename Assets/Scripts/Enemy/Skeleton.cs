@@ -57,6 +57,7 @@ public class Skeleton : EnemyBase {
         speedCurrent = 0;
         anim.SetTrigger ("death");
         Sound("DEATH");
+        GetComponent<CapsuleCollider2D>().enabled = false;
         Destroy (gameObject, 1.1f);
     }
 
