@@ -16,12 +16,12 @@ public class Frog : EnemyBase {
 
         anim = GetComponent<Animator> ();
         body = GetComponent<Rigidbody2D> ();
-        source = GetComponent<AudioSource>();
+        source = GetComponent<AudioSource> ();
     }
 
     private void Update () {
         if (Input.GetMouseButtonDown (0)) {
-            Jump();
+            Jump ();
         }
 
         var ground = (!Physics2D.Raycast (groundcheck.position, Vector2.down, distance));
@@ -34,7 +34,10 @@ public class Frog : EnemyBase {
     }
 
     protected override void OnDeath () {
-        Destroy (gameObject);
+        Sound("DEATH");
+        spriteRenderer.enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        Destroy (gameObject, 0.5f);
     }
 
     private void OnTriggerEnter2D (Collider2D other) {
@@ -43,9 +46,9 @@ public class Frog : EnemyBase {
         }
     }
 
-    private void Jump() {
+    private void Jump () {
         body.AddForce (new Vector2 (strong, strong), ForceMode2D.Impulse);
-        source.PlayOneShot(jump);
+        Sound("JUMP");
     }
 
     public void Sound (string sound) {
@@ -53,6 +56,18 @@ public class Frog : EnemyBase {
             case "IDLE":
                 source.PlayOneShot (idle);
                 break;
+
+            case "DEATH":
+                source.PlayOneShot (dead, 3);
+                break;
+
+            case "JUMP":
+                source.PlayOneShot (jump);
+                break;
         }
+    }
+
+    protected override void OnHit () {
+        Sound("DEATH");
     }
 }

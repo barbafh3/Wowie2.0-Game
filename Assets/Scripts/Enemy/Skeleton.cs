@@ -17,10 +17,10 @@ public class Skeleton : EnemyBase {
         base.Start ();
 
         anim = GetComponent<Animator> ();
-        source = GetComponent<AudioSource>();
+        source = GetComponent<AudioSource> ();
         startPos = transform.position;
 
-        Flip();
+        Flip ();
     }
 
     private void Update () {
@@ -41,8 +41,8 @@ public class Skeleton : EnemyBase {
                 inAttack = true;
             }
 
-        } else if (distance <= distanceForFollow && !inAttack) {            
-            Flip();
+        } else if (distance <= distanceForFollow && !inAttack) {
+            Flip ();
             speedCurrent = speed;
             transform.position = Vector2.MoveTowards (transform.position, newTarget, speedCurrent * Time.deltaTime);
 
@@ -56,24 +56,35 @@ public class Skeleton : EnemyBase {
     protected override void OnDeath () {
         speedCurrent = 0;
         anim.SetTrigger ("death");
+        Sound("DEATH");
         Destroy (gameObject, 1.1f);
     }
 
-
-    private void Flip() {
+    private void Flip () {
         if (transform.position.x > player.position.x && !lookRight || transform.position.x < player.position.x && lookRight) {
-                lookRight = !lookRight;
+            lookRight = !lookRight;
 
-                transform.rotation = (lookRight) ? Quaternion.Euler (0, 180, 0) : Quaternion.Euler (0, 0, 0);
-            }
+            transform.rotation = (lookRight) ? Quaternion.Euler (0, 180, 0) : Quaternion.Euler (0, 0, 0);
+        }
     }
 
-
-    public void Sound(string audio) {
-        switch(audio) {
+    public void Sound (string audio) {
+        switch (audio) {
             case "ATTACK":
-                source.PlayOneShot(attack);
-            break;
+                source.PlayOneShot (attack);
+                break;
+
+            case "DAMAGE":
+                source.PlayOneShot (damage);
+                break;
+
+            case "DEATH":
+                source.PlayOneShot (dead);
+                break;
         }
+    }
+
+    protected override void OnHit () {
+        Sound ("DAMAGE");
     }
 }

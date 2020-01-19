@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public class Wizard : EnemyBase {
 
@@ -10,26 +10,29 @@ public class Wizard : EnemyBase {
 
     private float timer;
 
-
-
-    private void Update() {
+    private void Update () {
         timer += Time.deltaTime;
 
-        if(timer >= countdown) {
+        if (timer >= countdown) {
             timer = 0;
-            StartCoroutine("Attack");
+            StartCoroutine ("Attack");
         }
     }
 
-
-    public IEnumerator Attack() {
-        anim.SetTrigger("attack");
-        yield return new WaitForSeconds(1.5f);
-        cannon.Shoot();
+    public IEnumerator Attack () {
+        anim.SetTrigger ("attack");
+        yield return new WaitForSeconds (0.3f);
+        source.PlayOneShot(attack);
+        yield return new WaitForSeconds (1.2f);
+        cannon.Shoot ();
     }
 
     protected override void OnDeath () {
         anim.SetTrigger ("death");
+        source.PlayOneShot(dead);
     }
 
+    protected override void OnHit () {
+        source.PlayOneShot(damage, 0.5f);
+    }
 }

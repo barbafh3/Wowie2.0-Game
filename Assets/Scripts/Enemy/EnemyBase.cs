@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour {
 
@@ -15,32 +15,32 @@ public abstract class EnemyBase : MonoBehaviour {
     protected Transform player;
     protected AudioSource source;
 
-    protected void Start() {
-        spriteRenderer = GetComponent<SpriteRenderer>();  
-        source = GetComponent<AudioSource>();
-        player = GameObject.FindWithTag("Player").transform;
+    protected void Start () {
+        spriteRenderer = GetComponent<SpriteRenderer> ();
+        source = GetComponent<AudioSource> ();
+        player = GameObject.FindWithTag ("Player").transform;
     }
 
-
     public void ApplyDamage (float damage) {
+        health -= damage;
 
-        if (!death) {
-            health -= damage;
+        if (health <= 0 && !death) {
+            death = true;
+            OnDeath ();
+
+        } else 
             StartCoroutine (TakeDamage ());
-
-            if (health <= 0 && !death) {
-                death = true;
-                OnDeath();
-            }
-        }
+        
     }
 
     protected IEnumerator TakeDamage () {
         spriteRenderer.color = Color.red;
+        OnHit ();
         yield return new WaitForSeconds (0.1f);
         spriteRenderer.color = Color.white;
     }
 
-    protected abstract void OnDeath();
-    
+    protected abstract void OnDeath ();
+    protected abstract void OnHit ();
+
 }
