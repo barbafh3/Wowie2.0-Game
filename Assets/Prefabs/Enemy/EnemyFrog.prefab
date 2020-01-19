@@ -50,7 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  health: 5
+  health: 2
+  attack: {fileID: 0}
+  damage: {fileID: 0}
+  dead: {fileID: 8300000, guid: 02ae2585f373ca04a9f3635bb05eb97c, type: 3}
   strong: 3
   distance: 0.1
   idle: {fileID: 8300000, guid: f4dbacf3189fb93458dff1b84940e3ad, type: 3}

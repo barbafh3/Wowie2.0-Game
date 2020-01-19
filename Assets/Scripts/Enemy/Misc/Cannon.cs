@@ -7,8 +7,10 @@ public class Cannon : MonoBehaviour {
 
     private float distance;
     private Transform target;
+    private AudioSource source;
 
     private void Start () {
+        source = GetComponent<AudioSource>();
         target = GameObject.FindWithTag ("Player").transform;
     }
 
@@ -41,5 +43,6 @@ public class Cannon : MonoBehaviour {
             
 
         shootTemp.GetComponent<CannonShoot> ().Shooting (strong, barrel.up);
+        source.Play();
     }
 }
