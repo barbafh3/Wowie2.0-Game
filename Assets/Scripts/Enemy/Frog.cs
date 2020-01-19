@@ -21,17 +21,10 @@ public class Frog : EnemyBase {
     }
 
     private void Update () {
-        if (Input.GetMouseButtonDown (0)) {
-            Jump ();
-        }
-
         var ground = (!Physics2D.Raycast (groundcheck.position, Vector2.down, distance));
 
         anim.SetBool ("jump", ground);
         anim.SetFloat ("yPos", body.velocity.y);
-
-        if (Input.GetMouseButtonDown (1))
-            ApplyDamage (1);
     }
 
     protected override void OnDeath () {
@@ -42,9 +35,8 @@ public class Frog : EnemyBase {
     }
 
     private void OnCollisionExit2D(Collision2D other) {
-        if (other.gameObject.CompareTag ("Player")) {
+        if (other.gameObject.CompareTag ("Player")) 
             other.gameObject.GetComponent<PlayerHealth> ().RemoveHealth (3);
-        }        
     }
 
     private void Jump () {

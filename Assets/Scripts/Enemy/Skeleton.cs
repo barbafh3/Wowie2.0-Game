@@ -46,9 +46,9 @@ public class Skeleton : EnemyBase {
             speedCurrent = speed;
             transform.position = Vector2.MoveTowards (transform.position, newTarget, speedCurrent * Time.deltaTime);
 
-        } else if (distance > distanceForFollow) {
+        } else if (distance > distanceForFollow) 
             transform.position = Vector2.MoveTowards (transform.position, startPos, speedCurrent * Time.deltaTime);
-        }
+        
     }
 
     public void DisableAttack () => inAttack = false;
