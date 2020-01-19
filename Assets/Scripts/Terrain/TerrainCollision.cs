@@ -8,7 +8,10 @@ public class TerrainCollision : MonoBehaviour
     if (other != null)
     {
       if (other.gameObject.CompareTag("Shot"))
-        Destroy(other);
+      {
+        Debug.Log("Hit");
+        Destroy(other.gameObject);
+      }
     }
   }
 
