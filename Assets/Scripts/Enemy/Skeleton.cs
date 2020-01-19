@@ -59,6 +59,7 @@ public class Skeleton : EnemyBase {
         Sound("DEATH");
         GetComponent<CapsuleCollider2D>().enabled = false;
         GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         Destroy (gameObject, 1.1f);
     }
 
