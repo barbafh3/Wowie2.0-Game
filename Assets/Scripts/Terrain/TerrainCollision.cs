@@ -8,7 +8,7 @@ public class TerrainCollision : MonoBehaviour
     if (other != null)
     {
       if (other.gameObject.CompareTag("Shot"))
-        other.gameObject.GetComponent<ShotMovement>().Collided();
+        Destroy(other);
     }
   }
 
