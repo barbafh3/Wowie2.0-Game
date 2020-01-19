@@ -9,7 +9,6 @@ public class JumpCollision : MonoBehaviour
 
   void OnTriggerEnter2D(Collider2D other)
   {
-    Debug.Log("collided");
     if (other.CompareTag("Ground"))
     {
       movement.Grounded();

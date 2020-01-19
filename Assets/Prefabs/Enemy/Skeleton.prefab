@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3347609930652644094}
   - component: {fileID: 3347609930652644089}
   - component: {fileID: 2912274521457114357}
+  - component: {fileID: 8367070739037920331}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,9 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   health: 2
-  attack: {fileID: 0}
-  damage: {fileID: 0}
-  dead: {fileID: 0}
+  attack: {fileID: 8300000, guid: 337e2e1a8178ce047a11fb4741a09968, type: 3}
+  damage: {fileID: 8300000, guid: d9d374c3efa9a4b40a7a0067bc3d66c8, type: 3}
+  dead: {fileID: 8300000, guid: 9ff442ee58af7e74f881c509afd5b944, type: 3}
   distanceForFollow: 6
   distanceForAttack: 1
   countdown: 1
@@ -139,8 +140,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.17754957, y: 0.48068345}
-  m_Size: {x: 0.52490085, y: 0.9595444}
+  m_Offset: {x: -0.0017062724, y: 0.48068345}
+  m_Size: {x: 0.87658745, y: 0.9795201}
   m_Direction: 0
 --- !u!82 &2912274521457114357
 AudioSource:
@@ -238,3 +239,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &8367070739037920331
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3347609930652644082}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 2
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
