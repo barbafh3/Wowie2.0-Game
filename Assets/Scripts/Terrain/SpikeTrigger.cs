@@ -11,6 +11,8 @@ public class SpikeTrigger : MonoBehaviour
     if (other.CompareTag("Player"))
     {
       other.transform.position = respawnTransform.position;
+      other.GetComponent<PlayerHealth>().RemoveHealth(1);
+      other.GetComponent<PlayerMovement>().animator.SetTrigger("Hurt");
       other.GetComponent<PlayerMovement>().rb.velocity = Vector2.zero;
     }
   }

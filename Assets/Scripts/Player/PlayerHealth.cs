@@ -39,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
     if (currentHealth.Value - amount >= 0)
     {
       currentHealth.Value -= amount;
+      GetComponent<PlayerMovement>().animator.SetTrigger("Hurt");
       healthChangeEvent.Raise();
     }
     else
