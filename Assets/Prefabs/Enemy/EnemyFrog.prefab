@@ -59,6 +59,7 @@ MonoBehaviour:
   idle: {fileID: 8300000, guid: f4dbacf3189fb93458dff1b84940e3ad, type: 3}
   jump: {fileID: 8300000, guid: 91202db61d0edb947830b7aa1d96f981, type: 3}
   groundcheck: {fileID: 8241218585020145472}
+  facingRight: 0
 --- !u!212 &4370296153111123790
 SpriteRenderer:
   m_ObjectHideFlags: 0
