@@ -7,6 +7,7 @@ public class Frog : EnemyBase {
     public AudioClip idle;
     public AudioClip jump;
     public Transform groundcheck;
+    public bool facingRight;
 
     private Animator anim;
     private Rigidbody2D body;
@@ -40,14 +41,18 @@ public class Frog : EnemyBase {
         Destroy (gameObject, 0.5f);
     }
 
-    private void OnTriggerEnter2D (Collider2D other) {
-        if (other.CompareTag ("Player")) {
-            other.GetComponent<PlayerHealth> ().RemoveHealth (1);
-        }
+    private void OnCollisionExit2D(Collision2D other) {
+        if (other.gameObject.CompareTag ("Player")) {
+            other.gameObject.GetComponent<PlayerHealth> ().RemoveHealth (3);
+        }        
     }
 
     private void Jump () {
-        body.AddForce (new Vector2 (strong, strong), ForceMode2D.Impulse);
+        if(facingRight)
+            body.AddForce (new Vector2(strong, strong), ForceMode2D.Impulse);
+        else
+            body.AddForce (new Vector2(-strong, strong), ForceMode2D.Impulse);
+
         Sound("JUMP");
     }
 
@@ -71,7 +76,15 @@ public class Frog : EnemyBase {
         Sound("DEATH");
     }
 
+    private void Randomize() {
+        var rand = Random.Range(0, 100);
+        if(rand <= 30) {
+            Jump();
+        }
+    }
+
     private void OnBecameVisible() {
         anim.Play("idle");
+        InvokeRepeating("Randomize", 0, 2);
     }
 }
